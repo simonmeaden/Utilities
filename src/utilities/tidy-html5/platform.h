@@ -1,0 +1,1 @@
+/home/simonmeaden/workspace/HtmlScannerTest/contrib/tidy-html5/include/platform.h
