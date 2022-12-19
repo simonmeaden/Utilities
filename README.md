@@ -10,5 +10,5 @@ These include
 - A web filedownloader. More or less the Qt 'Download Data from URL' tutorial.
 - A Qt key map utility.
 - A cpp circular buffer  (circularbuffer.h) header only
-- A Qt cpp circular buffer (CircularBuffer.h) header only
+- A Qt cpp circular buffer (CircularBuffer.h) header only. Not mine 'copyright Pete Goodliffe'
 - QYamlCpp a yaml-cpp Qt add on.
