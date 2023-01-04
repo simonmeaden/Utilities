@@ -13,11 +13,11 @@
 
   A partial set of useful unicode characters.
 
-  \note Some of the characters have multiple names for the same character. An example
-        is the forward slash character which has two names FORWARDSLASH and SOLIDUS.
-        This is because it is actually called a solidus character in unicode but in
-        many internal programming uses the name FORWARDSLASH is more descriptive of
-        it's actual use.
+  \note Some of the characters have multiple names for the same character. An
+  example is the forward slash character which has two names FORWARDSLASH and
+  SOLIDUS. This is because it is actually called a solidus character in unicode
+  but in many internal programming uses the name FORWARDSLASH is more
+  descriptive of it's actual use.
  */
 namespace Characters {
 
@@ -109,7 +109,6 @@ constexpr static QChar HTML_OPEN_TAG = QChar(0x3C);
 //! > HTML 5 close tag character
 constexpr static QChar HTML_CLOSE_TAG = QChar(0x3E);
 
-
 // various brackets {} [] ()
 //! { left curly bracket character
 constexpr static QChar OPEN_CURLY_BRACKET = QChar(0x7B);
@@ -136,7 +135,6 @@ constexpr static QChar CLOSE_ROUND_BRACKET = QChar(0x29);
 //! ) right parenthesis character
 constexpr static QChar RIGHT_PARENTHESIS = QChar(0x29);
 
-
 //! ? question mark character
 constexpr static QChar QUESTIONMARK = QChar(0x3F);
 //! ! exclamation mark character
@@ -147,12 +145,15 @@ constexpr static QChar APOSTROPHE = QChar(0x27);
 constexpr static QChar SINGLEQUOTE = APOSTROPHE;
 //! " double quote character
 constexpr static QChar QUOTATION = QChar(0x22);
+//! " double quote character
 constexpr static QChar DOUBLEQUOTE = QUOTATION;
 //! / solidus/forward slash character
 constexpr static QChar SOLIDUS = QChar(0x2F);
+//! / solidus/forward slash character
 constexpr static QChar FORWARDSLASH = SOLIDUS;
 //! \ reverse solidus/ backslash character
 constexpr static QChar R_SOLIDUS = QChar(0x5C);
+//! \ reverse solidus/ backslash character
 constexpr static QChar BACKSLASH = R_SOLIDUS;
 //! = equals/assignment character
 constexpr static QChar EQUALS = QChar(0x3D);
@@ -162,14 +163,31 @@ constexpr static QChar ASSIGNMENT = EQUALS;
 constexpr static QChar MINUS = QChar(0x3D);
 //! - minus/hyphen character
 constexpr static QChar HYPHEN = MINUS;
-//! : colon character
+//! : colon character (QChar)
 constexpr static QChar COLON = QChar(0x3A);
+//! : colon character (char)
 constexpr static char cCOLON = ':';
-//! # hash character
+//! & ampersand character (QChar)
+constexpr static QChar AMPERSAND = QChar(0x26);
+//! & ampersand character (char)
+constexpr static char cAMPERSAND = '&';
+//! # hash character (QChar)
 constexpr static QChar HASH = QChar(0x23);
+//! # hash character (char)
 constexpr static char cHASH = '#';
+//! * asterisk character
+constexpr static QChar ASTERISK = QChar(0x2A);
+constexpr static char cASTERISK = '*';
+//! % percent character
+constexpr static QChar PERCENT = QChar(0x25);
+constexpr static char cPERCENT = '%';
 //! , comma character
 constexpr static QChar COMMA = QChar(0x2C);
+constexpr static char cCOMMA = ',';
+//! , comma character
+constexpr static QChar STOP = QChar(0x2E);
+constexpr static QChar FULLSTOP = STOP;
+constexpr static char cSTOP = '.';
 //! ; semicolon character
 constexpr static QChar SEMICOLON = QChar(0x2C);
 //! ` Grave Accent
@@ -179,8 +197,7 @@ constexpr static QChar ACUTE_ACCENT = QChar(0xB4);
 //! | Vertical line
 constexpr static QChar VERTICAL_LINE = QChar(0x7C);
 
-
-//escaped character strings
+// escaped character strings
 //! " escaped double quote character
 const static QString ESCAPED_QUOTATION = "\"";
 

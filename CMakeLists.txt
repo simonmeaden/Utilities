@@ -5,22 +5,8 @@ project(utilities VERSION 0.1.0 LANGUAGES CXX)
 add_library(${PROJECT_NAME} "")
 add_library(Utilities::Utilities ALIAS ${PROJECT_NAME})
 
-find_package(Qt6
-  REQUIRED
-  COMPONENTS
-    Core
-    Gui
-    Widgets
-    Network
-    Xml
-    Svg
-    LinguistTools
-  OPTIONAL_COMPONENTS
-    Core5Compat
-#  PATHS
-#    /opt/Qt/6.4.1/gcc_64/lib
-)
-if (NOT Qt6_FOUND)
+if (USE_QT_VERSION EQUAL 5)
+    message("QT5")
     find_package(Qt5
       REQUIRED
       COMPONENTS
@@ -31,12 +17,60 @@ if (NOT Qt6_FOUND)
         Xml
         Svg
         LinguistTools
-#      PATHS
-#        /opt/Qt/5.15.2/gcc_64/lib
     )
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_AUTOUIC ON)
+    set(CMAKE_AUTORCC ON)
+    include(GNUInstallDirs)
+elseif(USE_QT_VERSION EQUAL 6)
+    message("QT6")
+    find_package(Qt6
+      REQUIRED
+      COMPONENTS
+        Core
+        Gui
+        Widgets
+        Network
+        Xml
+        Svg
+        LinguistTools
+      OPTIONAL_COMPONENTS
+        Core5Compat
+    )
+    qt_standard_project_setup()
+else()
+    find_package(Qt6
+      REQUIRED
+      COMPONENTS
+        Core
+        Gui
+        Widgets
+        Network
+        Xml
+        Svg
+        LinguistTools
+      OPTIONAL_COMPONENTS
+        Core5Compat
+    )
+    qt_standard_project_setup()
+    if (NOT Qt6_FOUND)
+        find_package(Qt5
+          REQUIRED
+          COMPONENTS
+            Core
+            Gui
+            Widgets
+            Network
+            Xml
+            Svg
+            LinguistTools
+        )
+        set(CMAKE_AUTOMOC ON)
+        set(CMAKE_AUTOUIC ON)
+        set(CMAKE_AUTORCC ON)
+        include(GNUInstallDirs)
+    endif()
 endif()
-
-qt_standard_project_setup()
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
@@ -57,6 +91,7 @@ target_sources(
 
   INTERFACE
 #    include/utilities/x11colors.h            # header only
+#    include/utilities/characters.h  # header only
 #    include/circularbuffer/circularbuffer.h  # header only
 #    include/circularbuffer/CircularBuffer.h  # header only
 
@@ -71,6 +106,7 @@ target_sources(
     include/utilities/paths.h
     include/utilities/filedownloader.h
     include/utilities/keymap.h
+    include/utilities/characters.h
     # end of MOC shit
 
     src/utilities/qtidydoc.cpp
@@ -80,6 +116,7 @@ target_sources(
     src/utilities/csvsplitter.cpp
     src/utilities/filedownloader.cpp
     src/utilities/keymap.cpp
+    src/utilities/paths.cpp
 
 )
 
