@@ -10,8 +10,7 @@
  * \author Simon Meaden
  * \date 2018-06-15
  */
-namespace StringUtil
-{
+namespace StringUtil {
 
 /*!
  *  \brief Removes excess whitespace from a QString.
@@ -19,7 +18,14 @@ namespace StringUtil
  *  Internal whitespace is limited to a single space serarator
  *  character per space.
  */
-QString removeWhitespace(const QString& text);
+QString
+removeWhitespace(const QString& text);
+
+QString
+lTrim(const QString& text, int& dropped);
+
+QString
+rTrim(const QString& text, int& dropped);
 
 } // end of namespace Strings
 

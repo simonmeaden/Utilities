@@ -21,6 +21,31 @@
  */
 namespace Characters {
 
+//! A null QChar
+constexpr static QChar NULLCHAR = QChar(0x0);
+//! A null QChar
+constexpr static QChar BELL = QChar(0x7);
+//! A null QChar
+constexpr static QChar BACKSPACE = QChar(0x8);
+//! horizontal tab character .
+constexpr static QChar TAB = QChar(0x9);
+//! vertical tab character .
+constexpr static QChar VTAB = QChar(0xB);
+//! form feed character .
+constexpr static QChar FF = QChar(0xC);
+//! carriage return character .
+constexpr static QChar CR = QChar(0x0D);
+//! line feed character .
+constexpr static QChar LF = QChar(0x0A);
+//! escape character .
+constexpr static QChar ESCAPE = QChar(0x1B);
+constexpr static QChar NEXTLINE = QChar(0x85);
+constexpr static QChar LINESEPERATOR = QChar(0x2028);
+constexpr static QChar PARASEPERATOR = QChar(0x2029);
+constexpr static QChar BYTEORDERMARK = QChar(0xFEFF);
+constexpr static QChar NBSPACE = QChar(0xA0);
+
+
 // various arrow or arrow type characters.
 //! ⯅ North pointing triangle
 constexpr static QChar N_TRIANGLE = QChar(0x2BC5);
@@ -92,12 +117,10 @@ constexpr static QChar NEWLINE_SYMBOL = QChar(0x2424);
 constexpr static QChar NEWLINE_LEFT_SYMBOL = QChar(0x2B92);
 //! ⮒ Right Newline character
 constexpr static QChar NEWLINE_RIGHT_SYMBOL = QChar(0x2B93);
-//! ␤ Newline character - used when requiring a tab in text.
-constexpr static QChar TAB = '\t';
 //! ⭿ Vertical Tab character
-constexpr static QChar VERTICAL_TAB_SYMBOL = QChar(0x2B7F);
+constexpr static QChar VERTICALTABSYMBOL = QChar(0x2B7F);
 //! ⭾ Horizontal Tab character
-constexpr static QChar HORIZONTAL_TAB_SYMBOL = QChar(0x2B7E);
+constexpr static QChar HORIZONTALTABSYMBOL = QChar(0x2B7E);
 
 // Greater and less than (also html tags)
 //! < less than character
@@ -155,12 +178,18 @@ constexpr static QChar FORWARDSLASH = SOLIDUS;
 constexpr static QChar R_SOLIDUS = QChar(0x5C);
 //! \ reverse solidus/ backslash character
 constexpr static QChar BACKSLASH = R_SOLIDUS;
+//! _ low line character
+constexpr static QChar LOWLINE = QChar(0x5F);
 //! = equals/assignment character
 constexpr static QChar EQUALS = QChar(0x3D);
 //! = assignment character. Identical to EQUALS.
 constexpr static QChar ASSIGNMENT = EQUALS;
+//! + plus character (QChar)
+constexpr static QChar PLUS = QChar(0x2B);
+//! + plus character (char)
+constexpr static QChar cPLUS = '+';
 //! - minus/hyphen character
-constexpr static QChar MINUS = QChar(0x3D);
+constexpr static QChar MINUS = QChar(0x2D);
 //! - minus/hyphen character
 constexpr static QChar HYPHEN = MINUS;
 //! : colon character (QChar)
@@ -173,6 +202,8 @@ constexpr static QChar AMPERSAND = QChar(0x26);
 constexpr static char cAMPERSAND = '&';
 //! # hash character (QChar)
 constexpr static QChar HASH = QChar(0x23);
+//! # octothorpe character (QChar)
+constexpr static QChar OCTOTHORPE = HASH;
 //! # hash character (char)
 constexpr static char cHASH = '#';
 //! * asterisk character
@@ -184,10 +215,18 @@ constexpr static char cPERCENT = '%';
 //! , comma character
 constexpr static QChar COMMA = QChar(0x2C);
 constexpr static char cCOMMA = ',';
-//! , comma character
+//! . comma character
 constexpr static QChar STOP = QChar(0x2E);
+constexpr static QChar POINT = QChar(0x2E);
 constexpr static QChar FULLSTOP = STOP;
 constexpr static char cSTOP = '.';
+//! @ commercial at character
+constexpr static QChar COMMERCIAL_AT = QChar(0x40);
+constexpr static QChar cCOMMERCIAL_AT = '@';
+//! @ commercial at character
+constexpr static QChar BACKTICK = QChar(0x60);
+constexpr static QChar GRAVEACCENT = BACKTICK;
+constexpr static QChar cBACKTICK = '`';
 //! ; semicolon character
 constexpr static QChar SEMICOLON = QChar(0x2C);
 //! ` Grave Accent
@@ -196,10 +235,12 @@ constexpr static QChar GRAVE_ACCENT = QChar(0x60);
 constexpr static QChar ACUTE_ACCENT = QChar(0xB4);
 //! | Vertical line
 constexpr static QChar VERTICAL_LINE = QChar(0x7C);
+//! | Vertical line
+constexpr static QChar VERTICAL_BAR = VERTICAL_LINE;
 
-// escaped character strings
-//! " escaped double quote character
-const static QString ESCAPED_QUOTATION = "\"";
+//// escaped character strings
+////! " escaped double quote character
+// constexpr static QString ESCAPED_QUOTATION = "\"";
 
 }; // end of namespace characters.
 
